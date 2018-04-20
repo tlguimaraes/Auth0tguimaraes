@@ -11,12 +11,13 @@ import java.io.IOException;
 @WebServlet(urlPatterns = {"/logout"})
 public class LogoutServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession() != null) {
-            request.getSession().invalidate();
-        }
-        response.sendRedirect("/login");
+  @Override
+  protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
+      throws ServletException, IOException {
+    if (request.getSession() != null) {
+      request.getSession().invalidate();
     }
+    response.sendRedirect("/login");
+  }
 
 }
